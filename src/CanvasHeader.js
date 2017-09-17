@@ -5,7 +5,7 @@ class CanvasHeader extends Component {
   properties = {
     color: '#cae5eb',
     lineDistance: 75,
-    numParticles : 150
+    numParticles : this.setParticulesNumber()
   }
 
   componentDidMount() {
@@ -106,8 +106,8 @@ class CanvasHeader extends Component {
     createDots()
   }
 
-  setLineDistance() {
-
+  setParticulesNumber() {
+    return Math.round(window.innerWidth * 0.1042)
   }
 
   render() {
