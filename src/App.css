@@ -1,8 +1,20 @@
 .App-header {
   width: 100%;
   height: 400px;
+  position: relative;
+  background: linear-gradient(#0b3450, #20516b);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.App-header-content-wrap {
+  color: #fefefe;
+  text-align: center;
+  z-index: 3;
 }
 canvas {
   width: 100%;
   height: 100%;
+  position: absolute;
 }
