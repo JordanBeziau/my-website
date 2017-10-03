@@ -1,3 +1,11 @@
+* { box-sizing: border-box }
+img {
+  max-width: 100%;
+}
+.container {
+  width: 75rem;
+  margin: 0 auto;
+}
 .App-header {
   width: 100%;
   height: 400px;
@@ -26,7 +34,29 @@ canvas {
   justify-content: space-around;
   list-style: none;
 }
-
+.period {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.period main {
+  flex: 0 0 50%;
+}
+.period > div {
+  flex: 0 0 50%;
+  text-align: center;
+}
+.period img {
+  max-height: 250px;
+}
 .hide {
   display: none;
+}
+
+
+@media screen and (max-width: 75rem) {
+  .container {
+    width: 100%;
+  }
 }

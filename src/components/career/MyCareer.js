@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SelectPeriod from './SelectPeriod'
 import DisplayPeriod from './DisplayPeriod'
-import data from './content/careerItems.js'
+import data from '../../content/careerItems.js'
 //const data = require('./content/careerItems')
 
 class MyCareer extends Component {
@@ -13,7 +13,7 @@ class MyCareer extends Component {
   }
   render() {
     return(
-      <div>
+      <div className="container">
         <SelectPeriod content={ data } selectedItem={ this.getSelectedItem } />
         <DisplayPeriod content={ data } selectedItem={ this.state.selectedId } />
       </div>

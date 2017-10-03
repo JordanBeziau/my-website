@@ -21,7 +21,11 @@ class DisplayItem extends Component {
     const { title, content, imageSource, imageDescription } = this.props.content
 
     return (
-      <div className={ !this.state.display && ('hide') }>
+      <div className={
+        (!this.state.display && ('hide'))
+        +' period'
+      }
+      >
         <main>
           <h2>{ title }</h2>
           <div>{ content }</div>

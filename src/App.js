@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import './App.css'
-import HeaderMainContent from './HeaderMainContent'
-import CanvasHeader from './CanvasHeader'
-import MyCareer from './MyCareer'
+import {
+  HeaderMainContent,
+  CanvasHeader,
+  MyCareer
+} from './components'
 
 class App extends Component {
   render() {
