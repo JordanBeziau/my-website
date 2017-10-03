@@ -18,12 +18,17 @@ class DisplayItem extends Component {
   }
 
   render() {
-    const { title, content } = this.props.content
+    const { title, content, imageSource, imageDescription } = this.props.content
 
     return (
       <div className={ !this.state.display && ('hide') }>
-        <h2>{ title }</h2>
-        <div>{ content }</div>
+        <main>
+          <h2>{ title }</h2>
+          <div>{ content }</div>
+        </main>
+        <div>
+          <img src={ imageSource } alt={ imageDescription } />
+        </div>
       </div>
     )
   }
