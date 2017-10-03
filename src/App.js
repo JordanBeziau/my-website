@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import HeaderMainContent from './HeaderMainContent'
 import CanvasHeader from './CanvasHeader'
+import MyCareer from './MyCareer'
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
           <HeaderMainContent className="App-header-content-wrap" />
           <CanvasHeader />
         </div>
+        <MyCareer />
       </div>
     )
   }

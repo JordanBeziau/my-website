@@ -18,3 +18,15 @@ canvas {
   height: 100%;
   position: absolute;
 }
+
+.select-period {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.hide {
+  display: none;
+}

@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 class CanvasHeader extends Component {
+  state = {
+    deviceWidth: window.innerWidth
+  }
+
   // properties
   properties = {
     color: '#cae5eb',
@@ -18,9 +22,9 @@ class CanvasHeader extends Component {
 
     ctx.scale(2,2)
 
-    canvas.width = window.innerWidth * 2
+    canvas.width = this.state.deviceWidth * 2
     canvas.height = header.offsetHeight * 2
-    canvas.style.width = window.innerWidth+'px'
+    canvas.style.width = this.state.deviceWidth+'px'
     canvas.style.height = header.offsetHeight+'px'
     canvas.style.display = 'block'
 
@@ -104,10 +108,13 @@ class CanvasHeader extends Component {
       dot.animate()
     }
     createDots()
+    console.log(this.properties.numParticles)
   }
 
   setParticulesNumber() {
-    return Math.round(window.innerWidth * 0.1042)
+    let add = 1
+
+    return Math.round(this.state.deviceWidth * 0.2 * add)
   }
 
   render() {
