@@ -1,20 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class SelectItem extends Component {
-  selectedItem = event => {
+const SelectItem = (props) => {
+  const selectedItem = event => {
     const item = event.target.getAttribute('data-id')
-    return this.props.selectedItem(item)
+    Array.from(document.querySelectorAll('.select-period li')).forEach( element => {
+      element.classList.remove('selected-item')
+    })
+    event.target.classList.add('selected-item')
+    return props.selectedItem(item)
   }
-  render() {
-    return (
-      <li
-        data-id={ this.props.dataId }
-        onClick={ this.selectedItem }
-      >
-        { this.props.contentTitle }
-      </li>
-    )
-  }
+  return (
+    <li
+      data-id={ props.dataId }
+      onClick={ selectedItem }
+      className={ props.dataId === 1 ? 'selected-item':'' }
+    >
+      {/* this.props.contentTitle */}
+    </li>
+  )
 }
 
 export default SelectItem
