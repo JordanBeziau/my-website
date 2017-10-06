@@ -1,19 +1,19 @@
 export default [
   {
     id : 1,
-    image : 'greensock.png',
+    image : 'calamart_animation.png',
     source : 'calamart_animation.gif',
     duration : 5000
   },
   {
     id : 2,
-    image : 'git.png',
+    image : 'cod_animation.png',
     source : 'cod_animation.gif',
     duration : 5000
   },
   {
     id : 3,
-    image : 'greensock.png',
+    image : 'calamart_animation.png',
     source : 'calamart_animation.gif',
     duration : 5000
   }
