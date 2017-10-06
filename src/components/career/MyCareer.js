@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import SelectPeriod from './SelectPeriod'
 import DisplayPeriod from './DisplayPeriod'
 import data from '../../content/careerItems.js'
-//const data = require('./content/careerItems')
 
 class MyCareer extends Component {
   state = {

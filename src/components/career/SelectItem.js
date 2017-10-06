@@ -15,7 +15,6 @@ const SelectItem = (props) => {
       onClick={ selectedItem }
       className={ props.dataId === 1 ? 'selected-item':'' }
     >
-      {/* this.props.contentTitle */}
     </li>
   )
 }

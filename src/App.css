@@ -97,6 +97,50 @@ li.selected-item {
 .hide {
   display: none;
 }
+.my-skills {
+  padding: 40px 0;
+  background: rgb(240,240,240);
+}
+.my-skills .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.my-skills .column {
+  width: 25%;
+  text-align: center;
+}
+.my-skills .column:first-of-type {
+  margin-bottom: 40px;
+}
+.my-skills img {
+  width: 75px;
+}
+.my-references {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.my-references .column {
+  position: relative;
+  width: 33.3%;
+}
+.gif-icon {
+  position: absolute;
+  top: .3rem;
+  right: 1.3rem;
+  font-size: .6rem;
+  color: white;
+  padding: .3rem .6rem;
+  text-transform: uppercase;
+  border-radius: 2px;
+  background-color: rgba(0,0,0,.6);
+}
+.gif-icon.is-active {
+  background-color: rgba(0, 130, 0, 0.6);
+}
 
 @media screen and (max-width: 75rem) {
   .container {

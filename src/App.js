@@ -3,7 +3,9 @@ import './App.css'
 import {
   HeaderMainContent,
   CanvasHeader,
-  MyCareer
+  MyCareer,
+  MySkills,
+  MyReferences
 } from './components'
 
 class App extends Component {
@@ -15,6 +17,8 @@ class App extends Component {
           <CanvasHeader />
         </div>
         <MyCareer />
+        <MySkills />
+        <MyReferences />
       </div>
     )
   }

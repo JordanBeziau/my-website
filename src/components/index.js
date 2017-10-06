@@ -1,3 +1,5 @@
 export { default as CanvasHeader } from './header/CanvasHeader'
 export { default as HeaderMainContent } from './header/HeaderMainContent'
 export { default as MyCareer } from './career/MyCareer'
+export { default as MySkills } from './skills/MySkills'
+export { default as MyReferences } from './reference/MyReferences'
