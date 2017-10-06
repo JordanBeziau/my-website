@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import GifIcon from './GifIcon'
+import GifLink from './GifLink'
 
 class ReferenceItem extends Component {
   state = {
-    isActive : false
+    isActive : false,
+    toggleButton : false
   }
 
   render () {
@@ -19,7 +21,10 @@ class ReferenceItem extends Component {
       } else {
         event.target.src = img.src
         this.setState({ isActive : true })
+        if (!this.state.toggleButton) this.setState({ toggleButton : true })
       }
+
+      console.log(this.state.toggleButton)
     }
 
     return (
@@ -30,6 +35,7 @@ class ReferenceItem extends Component {
           onClick={ (e) => playGIF(e) }
         />
         <GifIcon isActive={ this.state.isActive } />
+        { this.state.toggleButton && <GifLink /> }
       </div>
     )
   }

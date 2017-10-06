@@ -4,7 +4,7 @@ import references from '../../content/references'
 
 export default () => {
   return(
-    <div className="my-references">
+    <div className=" container my-references">
       {
         references.map(item => <ReferenceItem content={ item } key={ item.id } />)
       }

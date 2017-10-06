@@ -3,8 +3,8 @@ img {
   max-width: 100%;
 }
 .container {
-  width: 75rem;
   margin: 0 auto;
+  width: 75rem;
 }
 .column {
   padding-left: 1rem;
@@ -14,14 +14,14 @@ img {
   ######## HEADER ########
 */
 .App-header {
-  width: 100%;
-  height: 400px;
-  position: relative;
+  align-items: center;
   background: linear-gradient(#0b3450, #20516b);
   display: flex;
   flex-wrap: wrap;
+  height: 400px;
   justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 100%;
 }
 .App-header-content-wrap {
   color: #fefefe;
@@ -29,60 +29,60 @@ img {
   z-index: 3;
 }
 canvas {
-  width: 100%;
   height: 100%;
   position: absolute;
+  width: 100%;
 }
 /*
   ######## Career Section ########
 */
 .career {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
 }
 .select-period {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  list-style: none;
-  justify-content: space-around;
   height: 300px;
+  justify-content: space-around;
+  list-style: none;
 }
 .select-period li {
-  width: 17px;
-  height: 17px;
+  background: #fefefe;
   border-radius: 100%;
   border: 1px solid #20516b;
-  background: #fefefe;
-  position: relative;
-  z-index: 3;
   cursor: pointer;
+  height: 17px;
+  position: relative;
+  width: 17px;
+  z-index: 3;
 }
 .select-period li:first-of-type::before {
+  background: #20516b;
   content: '';
-  position: absolute;
-  z-index: 2;
-  top: 16px;
+  height: 195px;
   left: 50%;
+  position: absolute;
+  top: 16px;
   transform: translateX(-100%);
   width: 1px;
-  height: 195px;
-  background: #20516b;
+  z-index: 2;
 }
 li.selected-item {
-  border: 0;
   background: #20516b;
+  border: 0;
 }
 .period-wrap {
   width: 90%;
 }
 .period {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
 }
 .period main {
   flex: 0 0 70%;
@@ -98,8 +98,8 @@ li.selected-item {
   display: none;
 }
 .my-skills {
-  padding: 40px 0;
   background: rgb(240,240,240);
+  padding: 40px 0;
 }
 .my-skills .container {
   display: flex;
@@ -108,8 +108,8 @@ li.selected-item {
   justify-content: space-around;
 }
 .my-skills .column {
-  width: 25%;
   text-align: center;
+  width: 25%;
 }
 .my-skills .column:first-of-type {
   margin-bottom: 40px;
@@ -124,19 +124,22 @@ li.selected-item {
   padding: 40px 0;
 }
 .my-references .column {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 33.3%;
 }
 .gif-icon {
-  position: absolute;
-  top: .3rem;
-  right: 1.3rem;
-  font-size: .6rem;
-  color: white;
-  padding: .3rem .6rem;
-  text-transform: uppercase;
-  border-radius: 2px;
   background-color: rgba(0,0,0,.6);
+  border-radius: 2px;
+  color: white;
+  font-size: .6rem;
+  padding: .3rem .6rem;
+  position: absolute;
+  right: 1.3rem;
+  text-transform: uppercase;
+  top: .3rem;
 }
 .gif-icon.is-active {
   background-color: rgba(0, 130, 0, 0.6);
