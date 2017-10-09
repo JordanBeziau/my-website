@@ -1,30 +1,42 @@
 export default [
   {
     id : 1,
-    name : 'html'
+    name : 'html',
+    prettyName : 'HTML'
   },
   {
     id : 2,
-    name : 'css'
+    name : 'css',
+    prettyName : 'CSS'
   },
   {
     id : 3,
-    name : 'js'
+    name : 'js',
+    prettyName : 'Javascript'
   },
   {
     id : 4,
-    name : 'react'
+    name : 'react',
+    prettyName : 'React'
   },
   {
     id : 5,
-    name : 'greensock'
+    name : 'greensock',
+    prettyName : 'GreenSock'
+  },
+  {
+    id : 6,
+    name : 'scrollmagic',
+    prettyName : 'ScrollMagic'
   },
   {
     id : 7,
-    name : 'symfony'
+    name : 'symfony',
+    prettyName : 'Symfony'
   },
   {
     id : 8,
-    name : 'git'
+    name : 'git',
+    prettyName : 'Git'
   }
 ]

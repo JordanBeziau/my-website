@@ -108,13 +108,12 @@ class CanvasHeader extends Component {
       dot.animate()
     }
     createDots()
-    console.log(this.properties.numParticles)
   }
 
   setParticulesNumber() {
     let add = 1
 
-    return Math.round(this.state.deviceWidth * 0.2 * add)
+    return Math.round(this.state.deviceWidth * 0.1 * add)
   }
 
   render() {

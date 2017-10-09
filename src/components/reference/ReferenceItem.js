@@ -35,7 +35,7 @@ class ReferenceItem extends Component {
           onClick={ (e) => playGIF(e) }
         />
         <GifIcon isActive={ this.state.isActive } />
-        { this.state.toggleButton && <GifLink /> }
+        <GifLink />
       </div>
     )
   }

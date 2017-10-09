@@ -8,7 +8,7 @@ class MySkills extends Component {
       <section className="my-skills">
         <div className="container">
           {
-            skillContent.map(item => <SkillsItem key={ item.id } content={ item.name } />)
+            skillContent.map(item => <SkillsItem key={ item.id } content={ item } />)
           }
         </div>
       </section>

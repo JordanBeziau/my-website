@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Jordan Beziau - Développeur Front End</title>
+  <style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+</style><style type="text/css">* { -webkit-box-sizing: border-box; box-sizing: border-box }
+img {
+  max-width: 100%;
+}
+.container {
+  margin: 0 auto;
+  width: 75rem;
+  padding: 40px 0;
+}
+.column {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+/*
+  ######## HEADER ########
+*/
+.App-header {
+  -ms-flex-align: center;
+      align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0b3450), to(#20516b));
+  background: -webkit-linear-gradient(#0b3450, #20516b);
+  background: -o-linear-gradient(#0b3450, #20516b);
+  background: linear-gradient(#0b3450, #20516b);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 400px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  position: relative;
+  width: 100%;
+}
+.App-header-content-wrap {
+  color: #fefefe;
+  text-align: center;
+  z-index: 3;
+}
+canvas {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+/*
+  ######## Career Section ########
+*/
+.career {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.select-period {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 300px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  margin: 0;
+}
+.select-period li {
+  background: #fefefe;
+  border-radius: 100%;
+  border: 1px solid #20516b;
+  cursor: pointer;
+  height: 17px;
+  position: relative;
+  width: 17px;
+  z-index: 3;
+}
+.select-period li:first-of-type::before {
+  background: #20516b;
+  content: '';
+  height: 195px;
+  left: 50%;
+  position: absolute;
+  top: 16px;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  width: 1px;
+  z-index: 2;
+}
+li.selected-item {
+  background: #20516b;
+  border: 0;
+}
+.period-wrap {
+  width: 90%;
+}
+.period {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.period main {
+  -ms-flex: 0 0 70%;
+      flex: 0 0 70%;
+}
+.period h2 {
+  margin-top: 0;
+}
+.period > div {
+  -ms-flex: 0 0 30%;
+      flex: 0 0 30%;
+  text-align: center;
+}
+.period img {
+  max-height: 250px;
+}
+.hide {
+  display: none;
+}
+.my-skills {
+  background: rgb(240,240,240);
+}
+.my-skills .container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-bottom: 0;
+}
+.my-skills .column {
+  padding-bottom: 40px;
+  position: relative;
+  text-align: center;
+  width: 25%;
+}
+.my-skills img {
+  width: 75px;
+}
+.info-icon {
+  background-color: rgb(20, 20, 20);
+  color: #fefefe;
+  border-radius: 4px;
+  bottom: 10px;
+  padding: 4px 8px;
+  position: absolute;
+}
+.my-references {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 40px 0;
+}
+.my-references .column {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  width: 33.3%;
+}
+.gif-icon {
+  background-color: rgba(0,0,0,.6);
+  border-radius: 2px;
+  color: white;
+  font-size: .6rem;
+  padding: .3rem .6rem;
+  position: absolute;
+  right: 1.3rem;
+  text-transform: uppercase;
+  top: .3rem;
+}
+.gif-icon.is-active {
+  background-color: rgba(0, 130, 0, 0.6);
+}
+.gif-link {
+  position: relative;
+  margin-top: 20px;
+  text-decoration: none;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 300;
+  color: #0b3450;
+  border: 1px solid #0b3450;
+}
+
+@media screen and (max-width: 75rem) {
+  .container {
+    width: 100%;
+  }
+}
+</style><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.fc5ec34838a507cc40bb.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.3fbdc48403e93d860354.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.380f75b52a796c0440c4.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.6d501c059bcd34ad64b3.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.0143702a74d9e76e36d0.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.6502343c758f658582c8.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.382dcea68d3d274c8606.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.e929e71e929ac821f579.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.6c170042cefaf63cc687.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.72f84ec26ec8eb57ac84.hot-update.js"></script><script type="text/javascript" charset="utf-8" src="./Jordan Beziau - Développeur Front End_files/0.ca061592801c63979436.hot-update.js"></script></head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"><div data-reactroot="" class="App"><div class="App-header"><div class="App-header-content-wrap"><div class="header-circle-img"></div><h1>Jordan Beziau</h1><h2>Développeur Front End</h2></div><canvas width="1356" height="800" style="width: 678px; height: 400px; display: block;"></canvas></div><div class="container career"><ul class="select-period column"><li data-id="1" class="selected-item"></li><li data-id="2" class=""></li><li data-id="3" class=""></li></ul><div class="period-wrap"><div class="period"><main class="column"><h2>Infographiste Multimedia</h2><div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed nulla nec velit accumsan elementum eget sed arcu. Donec metus quam, porttitor ut semper tempus, fermentum vitae metus. Morbi fringilla commodo dignissim. Phasellus venenatis pellentesque risus, in egestas ex. Nullam sed sem mattis, dapibus sem vitae, vestibulum velit. In eget lorem sed ipsum posuere elementum. Vestibulum at felis sed lacus auctor laoreet. Aliquam erat volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent volutpat porta finibus. Nulla posuere sagittis justo. Ut ultricies est ac suscipit suscipit.</div></main><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/image1.png" alt=""></div></div><div class="hide period"><main class="column"><h2>Comtesse du Barry</h2><div>Phasellus rutrum vestibulum elit, et egestas arcu feugiat eu. Aliquam efficitur enim et est auctor efficitur. Etiam dictum, erat id pulvinar mattis, odio justo molestie urna, sit amet ullamcorper erat erat et mauris. Suspendisse facilisis turpis justo, et placerat ligula pharetra non. Mauris vulputate erat eget libero fringilla bibendum. Donec eget venenatis purus, sed malesuada sapien. Suspendisse cursus purus non ultricies dapibus. Aliquam placerat molestie nisl. Quisque at vestibulum leo. Donec nibh sapien, tincidunt id est viverra, convallis mattis lectus. Proin semper velit et ullamcorper elementum.</div></main><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/image2.png" alt=""></div></div><div class="hide period"><main class="column"><h2>InSpace Institute</h2><div>Ut lobortis aliquam lacus non laoreet. Nunc cursus volutpat orci a venenatis. Praesent finibus ipsum vel eros tincidunt imperdiet. Curabitur tempor turpis eu bibendum convallis. Cras sapien turpis, vehicula sed erat nec, blandit iaculis libero. Sed egestas mollis commodo. Integer id purus mi. Sed ante enim, varius scelerisque risus id, sagittis vehicula risus. Nunc tempus erat ut finibus dapibus.</div></main><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/image3.png" alt=""></div></div></div></div><section class="my-skills"><div class="container"><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/html.png" alt="HTML"></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/css.png" alt="CSS"></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/js.png" alt="Javascript"></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/react.png" alt="React"></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/greensock.png" alt="GreenSock"></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/scrollmagic.png" alt="ScrollMagic"></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/symfony.png" alt="Symfony"></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/git.png" alt="Git"></div></div></section><div class=" container my-references"><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/calamart_animation.png" alt=""><div class="gif-icon">gif</div><a class="gif-link" href="http://localhost:3000/">Voir le site</a></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/cod_animation.png" alt=""><div class="gif-icon">gif</div><a class="gif-link" href="http://localhost:3000/">Voir le site</a></div><div class="column"><img src="./Jordan Beziau - Développeur Front End_files/calamart_animation.png" alt=""><div class="gif-icon">gif</div><a class="gif-link" href="http://localhost:3000/">Voir le site</a></div></div></div></div>
+    
+  <script type="text/javascript" src="./Jordan Beziau - Développeur Front End_files/bundle.js"></script>
+
+</body></html>

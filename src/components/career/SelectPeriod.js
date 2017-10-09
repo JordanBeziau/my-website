@@ -4,7 +4,7 @@ import SelectItem from './SelectItem'
 const SelectPeriod = (props) => {
   const selectedItem = item => props.selectedItem(item)
   return (
-    <ul className="select-period column">
+    <ul className="select-period column" id="career-selection">
       { props.content.careerItems.map(item =>
         <SelectItem
           key={ item.id }
