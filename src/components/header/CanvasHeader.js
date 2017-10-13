@@ -8,7 +8,7 @@ class CanvasHeader extends Component {
   // properties
   properties = {
     color: '#cae5eb',
-    lineDistance: 75,
+    lineDistance: 100,
     numParticles : this.setParticulesNumber()
   }
 

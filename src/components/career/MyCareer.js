@@ -13,8 +13,11 @@ class MyCareer extends Component {
   render() {
     return(
       <div className="container career">
-        <SelectPeriod content={ data } selectedItem={ this.getSelectedItem } />
-        <DisplayPeriod content={ data } selectedItem={ this.state.selectedId } />
+        <h3 className="column">Mon parcours</h3>
+        <div>
+          <SelectPeriod content={ data } selectedItem={ this.getSelectedItem } />
+          <DisplayPeriod content={ data } selectedItem={ this.state.selectedId } />
+        </div>
       </div>
     )
   }

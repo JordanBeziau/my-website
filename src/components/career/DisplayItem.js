@@ -23,7 +23,7 @@ class DisplayItem extends Component {
     return (
       <div className={ !this.state.display ?'hide period':'period' }>
         <main className="column">
-          <h2>{ title }</h2>
+          <h4>{ title }</h4>
           <div>{ content }</div>
         </main>
         <div className="column">

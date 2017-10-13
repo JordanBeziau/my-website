@@ -5,7 +5,8 @@ import {
   CanvasHeader,
   MyCareer,
   MySkills,
-  MyReferences
+  MyReferences,
+  SocialNetwork
 } from './components'
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
         <MyCareer />
         <MySkills />
         <MyReferences />
+        <SocialNetwork />
       </div>
     )
   }

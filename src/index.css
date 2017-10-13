@@ -4,6 +4,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+h1, h2, h3 { font-family: 'Orbitron' }
+h3 {
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+h4, h5, p { font-family: 'Play' }
+h4 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
 img {
   max-width: 100%;
 }
@@ -42,7 +52,7 @@ canvas {
 /*
   ######## Career Section ########
 */
-.career {
+.career > div {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -52,8 +62,8 @@ canvas {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 300px;
-  justify-content: space-around;
+  height: 250px;
+  justify-content: space-between;
   list-style: none;
   margin: 0;
 }
@@ -66,8 +76,23 @@ canvas {
   position: relative;
   width: 17px;
   z-index: 3;
+  transform: scale(0);
 }
-
+.select-period li:first-of-type { transition: transform .2s linear .7s }
+.show-selection-list li:first-of-type {
+  transform: scale(1);
+  transition: transform .2s;
+}
+.select-period li:nth-of-type(2) { transition: transform .1s linear .45s }
+.show-selection-list li:nth-of-type(2) {
+  transform: scale(1);
+  transition: transform .2s linear .35s;
+}
+.select-period li:last-of-type { transition: transform .2s linear .2s }
+.show-selection-list li:last-of-type {
+  transform: scale(1);
+  transition: transform .2s linear .6s;
+}
 .select-period li:first-of-type::before {
   background: #20516b;
   content: '';
@@ -78,10 +103,11 @@ canvas {
   transform: translateX(-100%);
   width: 1px;
   z-index: 2;
-  transition: height .5s;
+  transition: height .6s linear .1s;
 }
 .show-selection-list li:first-of-type::before {
-  height: 195px;
+  transition: height .6s linear .1s;
+  height: 225px;
 }
 li.selected-item {
   background: #20516b;
@@ -89,6 +115,12 @@ li.selected-item {
 }
 .period-wrap {
   width: 90%;
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+.period-wrap.fade-in {
+  opacity: 1;
+  transition: opacity .2s linear .8s;
 }
 .period {
   align-items: center;
@@ -131,6 +163,13 @@ li.selected-item {
 }
 .my-skills img {
   width: 75px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all .2s;
+}
+.my-skills .fade-in, .social-network .fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 .info-icon {
   background-color: #20516b;
@@ -145,29 +184,38 @@ li.selected-item {
   transition: all .2s;
 }
 .info-icon::after {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
+  border-color: transparent transparent #20516b transparent;
   border-style: solid;
   border-width: 0 6px 6px 6px;
-  border-color: transparent transparent #20516b transparent;
+  content: '';
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: -6px;
+  transform: translateX(-50%);
+  width: 0;
 }
-.my-references {
+.my-references > div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 40px 0;
 }
-.my-references .column {
+.my-references div .column {
   align-items: center;
   display: flex;
   flex-direction: column;
   position: relative;
   width: 33.3%;
+}
+.my-references img { cursor: pointer }
+.gif-wrap {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all .2s linear;
+}
+.my-references .fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 .gif-icon {
   background-color: rgba(0,0,0,.6);
@@ -176,7 +224,7 @@ li.selected-item {
   font-size: .6rem;
   padding: .3rem .6rem;
   position: absolute;
-  right: 1.3rem;
+  right: .3rem;
   text-transform: uppercase;
   top: .3rem;
 }
@@ -184,16 +232,96 @@ li.selected-item {
   background-color: rgba(0, 130, 0, 0.6);
 }
 .gif-link {
-  position: relative;
-  margin-top: 20px;
-  text-decoration: none;
-  width: 120px;
+  color: #0b3450;
+  font-weight: 300;
   height: 30px;
   line-height: 30px;
+  margin-top: 20px;
+  position: relative;
   text-align: center;
-  font-weight: 300;
-  color: #0b3450;
-  border: 1px solid #0b3450;
+  text-decoration: none;
+  width: 140px;
+  opacity: 0;
+  transition: opacity .15s linear .85s;
+}
+.gif-link svg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.gif-link line {
+  fill: none;
+  stroke: #0b3450;
+  stroke-width: 2;
+}
+.left, .right {
+  stroke-dasharray: 30;
+  transform: translateY(30px);
+  transition: transform .15s linear .35s;
+}
+.top-right {
+  stroke-dasharray: 70;
+  transform: translateX(70px);
+}
+.top-left {
+  stroke-dasharray: 70;
+  transform: translateX(-70px);
+}
+.top-left, .top-right { transition: transform .35s linear }
+.gif-link::after {
+  border-bottom: 1px solid #0b3450;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleX(0);
+  transition: transform .35s linear .5s;
+  width: 100%;
+}
+.draw .top-left, .draw .top-right {
+  transform: translateX(0);
+  transition: transform .35s linear .65s;
+}
+.draw .left, .draw .right {
+  transform: translateY(0);
+  transition: transform .15s linear .5s;
+}
+.draw::after {
+  transform: scaleX(1);
+  transition: transform .35s linear .15s;
+}
+.draw {
+  opacity: 1;
+  transition:
+    opacity .15s linear,
+    color .2s linear,
+    background-color .2s linear;
+}
+.gif-link:hover {
+  color: #fefefe;
+  background: #20516b;
+}
+.social-network { background-color: #0b3450 }
+.social-network .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-network .column {
+  position: relative;
+}
+.social-network img {
+  width: 40px;
+  cursor: pointer;
+  transition: all .2s;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.social-network .info-icon {
+  bottom: -30px;
 }
 
 @media screen and (max-width: 75rem) {

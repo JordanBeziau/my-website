@@ -23,19 +23,19 @@ class ReferenceItem extends Component {
         this.setState({ isActive : true })
         if (!this.state.toggleButton) this.setState({ toggleButton : true })
       }
-
-      console.log(this.state.toggleButton)
     }
 
     return (
       <div className="column">
-        <img
-          src={ `/img/${ gif.image }` }
-          alt=""
-          onClick={ (e) => playGIF(e) }
-        />
-        <GifIcon isActive={ this.state.isActive } />
-        <GifLink />
+        <div className="gif-wrap">
+          <img
+            src={ `/img/${ gif.image }` }
+            alt=""
+            onClick={ (e) => playGIF(e) }
+          />
+          <GifIcon isActive={ this.state.isActive } />
+        </div>
+        <GifLink link={ gif.link } />
       </div>
     )
   }
