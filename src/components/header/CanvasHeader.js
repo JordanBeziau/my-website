@@ -7,20 +7,28 @@ class CanvasHeader extends Component {
 
   // properties
   properties = {
-    color: '#cae5eb',
+    color: 'rgba(202, 229, 235, .3)',
     lineDistance: 100,
-    numParticles : this.setParticulesNumber()
+    numParticles : this.setParticulesNumber(),
   }
 
   componentDidMount() {
+    this.setCanvas()
+    window.addEventListener('resize',  this.isResizing)
+  }
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.isResizing)
+  }
+  componentDidUpdate() { this.setCanvas() }
+
+  setCanvas() {
+    console.log('mount')
     // Code to actually run canvas stuff
     const header = document.querySelector('.App-header')
     const canvas = document.querySelector('canvas')
     const ctx = canvas.getContext('2d')
     //ctx    = canvas.getContext('2d').scale(2,2),
     // idle   = null, mousePosition
-
-    ctx.scale(2,2)
 
     canvas.width = this.state.deviceWidth * 2
     canvas.height = header.offsetHeight * 2
@@ -35,8 +43,8 @@ class CanvasHeader extends Component {
 
     // var dotNum = properties.numParticles
     var mousePosition = { x: 30 * canvas.width / 100, y: 30 * canvas.height / 100 },
-    //dots = { nb: 600, distance: 80, d_radius: 3000, array: [] }
-    dots = { nb: this.properties.numParticles, distance: this.properties.lineDistance, d_radius: 3000, array: [] }
+      //dots = { nb: 600, distance: 80, d_radius: 3000, array: [] }
+      dots = { nb: this.properties.numParticles, distance: this.properties.lineDistance, d_radius: 3000, array: [] }
 
     function Dot() {
       this.x = Math.random() * canvas.width
@@ -111,12 +119,15 @@ class CanvasHeader extends Component {
   }
 
   setParticulesNumber() {
-    let add = 1
+    return Math.round(this.state.deviceWidth * 0.1)
+  }
 
-    return Math.round(this.state.deviceWidth * 0.1 * add)
+  isResizing = () => {
+    this.setState({ deviceWidth : window.innerWidth })
   }
 
   render() {
+    console.log(this.properties.resize)
     return (
       <canvas />
     )

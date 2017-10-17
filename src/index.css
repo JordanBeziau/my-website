@@ -36,6 +36,7 @@ img {
   flex-wrap: wrap;
   height: 400px;
   justify-content: center;
+  overflow: auto;
   position: relative;
   width: 100%;
 }
