@@ -15,7 +15,11 @@ class MyCareer extends Component {
       <div className="container career">
         <h3 className="column">Mon parcours</h3>
         <div>
-          <SelectPeriod content={ data } selectedItem={ this.getSelectedItem } />
+          <SelectPeriod
+            content={ data }
+            selectedItem={ this.getSelectedItem }
+            currentItem={ this.state.selectedId }
+          />
           <DisplayPeriod content={ data } selectedItem={ this.state.selectedId } />
         </div>
       </div>

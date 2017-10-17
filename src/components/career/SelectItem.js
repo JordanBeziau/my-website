@@ -1,22 +1,28 @@
 import React from 'react'
 
-const SelectItem = (props) => {
+export default (props) => {
+
   const selectedItem = event => {
-    const item = event.target.getAttribute('data-id')
-    Array.from(document.querySelectorAll('.select-period li')).forEach( element => {
-      element.classList.remove('selected-item')
-    })
-    event.target.classList.add('selected-item')
+    const item = event.target.parentElement.getAttribute('data-id')
     return props.selectedItem(item)
   }
+
+  const setClassName = () =>{
+    if (props.dataId == props.currentItem)
+      return 'selected-item'
+    if (props.currentItem == 1 && props.dataId == 2)
+      return 'is-next'
+    if(props.currentItem == 2 && props.dataId == 3)
+      return 'is-next'
+  }
+
   return (
     <li
       data-id={ props.dataId }
       onClick={ selectedItem }
-      className={ props.dataId === 1 ? 'selected-item':'' }
+      className={ setClassName() }
     >
+      <i></i>
     </li>
   )
 }
-
-export default SelectItem

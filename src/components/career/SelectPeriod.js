@@ -11,6 +11,7 @@ const SelectPeriod = (props) => {
           contentTitle={ item.title }
           dataId={ item.id }
           selectedItem= { selectedItem }
+          currentItem={ props.currentItem }
         />
       ) }
     </ul>

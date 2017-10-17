@@ -1,8 +1,8 @@
 * { box-sizing: border-box }
 body {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 h1, h2, h3 { font-family: 'Orbitron' }
 h3 {
@@ -19,8 +19,8 @@ img {
 }
 .container {
   margin: 0 auto;
+  padding: 60px 0;
   width: 75rem;
-  padding: 40px 0;
 }
 .column {
   padding-left: 1rem;
@@ -68,29 +68,31 @@ canvas {
   list-style: none;
   margin: 0;
 }
-.select-period li {
+.select-period li { position: relative; }
+.select-period li i {
+  display: block;
   background: #fefefe;
   border-radius: 100%;
   border: 1px solid #20516b;
   cursor: pointer;
   height: 17px;
-  position: relative;
   width: 17px;
-  z-index: 3;
+  z-index: 4;
+  position: relative;
   transform: scale(0);
 }
-.select-period li:first-of-type { transition: transform .2s linear .7s }
-.show-selection-list li:first-of-type {
+.select-period li:first-of-type i { transition: transform .2s linear .7s }
+.show-selection-list li:first-of-type i {
   transform: scale(1);
   transition: transform .2s;
 }
-.select-period li:nth-of-type(2) { transition: transform .1s linear .45s }
-.show-selection-list li:nth-of-type(2) {
+.select-period li:nth-of-type(2) i { transition: transform .1s linear .45s }
+.show-selection-list li:nth-of-type(2) i {
   transform: scale(1);
   transition: transform .2s linear .35s;
 }
-.select-period li:last-of-type { transition: transform .2s linear .2s }
-.show-selection-list li:last-of-type {
+.select-period li:last-of-type i { transition: transform .2s linear .2s }
+.show-selection-list li:last-of-type i {
   transform: scale(1);
   transition: transform .2s linear .6s;
 }
@@ -110,7 +112,43 @@ canvas {
   transition: height .6s linear .1s;
   height: 225px;
 }
-li.selected-item {
+.select-period .is-next::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #20516b;
+  animation: growth 4s linear 2s infinite;
+  opacity: 0;
+}
+.select-period .is-next::before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #20516b;
+  animation: growth 4s linear 2.3s infinite;
+  opacity: 0;
+}
+@keyframes growth {
+  85% {
+    transform: scale(1);
+    opacity: .8
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0
+  }
+}
+li.selected-item i {
   background: #20516b;
   border: 0;
 }
@@ -145,6 +183,9 @@ li.selected-item {
 .hide {
   display: none;
 }
+/*
+  ######## My Skills ########
+*/
 .my-skills {
   background: rgb(240,240,240);
 }
@@ -196,6 +237,9 @@ li.selected-item {
   transform: translateX(-50%);
   width: 0;
 }
+/*
+  ####### My References #######
+*/
 .my-references > div {
   display: flex;
   flex-direction: row;
@@ -305,6 +349,9 @@ li.selected-item {
   color: #fefefe;
   background: #20516b;
 }
+/*
+  ####### My Social Network #######
+*/
 .social-network { background-color: #0b3450 }
 .social-network .container {
   display: flex;
@@ -324,9 +371,23 @@ li.selected-item {
 .social-network .info-icon {
   bottom: -30px;
 }
-
+/*
+  ####### Responsive ######
+*/
 @media screen and (max-width: 75rem) {
   .container {
     width: 100%;
+  }
+}
+@media screen and (max-width: 47.9375rem) {
+  .period main {
+    flex: 0 0 100%;
+  }
+  .period > div {
+    display: none;
+  }
+  .period-wrap { width: 85% }
+  .select-period {
+    width: 15%;
   }
 }
