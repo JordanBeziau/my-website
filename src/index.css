@@ -36,7 +36,7 @@ img {
   flex-wrap: wrap;
   height: 400px;
   justify-content: center;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   width: 100%;
 }
@@ -65,18 +65,23 @@ canvas {
   flex-wrap: wrap;
   height: 250px;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
   margin: 0;
 }
-.select-period li { position: relative; }
+.select-period li {
+  position: relative;
+  width: 17px;
+  height: 17px;
+}
 .select-period li i {
   display: block;
   background: #fefefe;
   border-radius: 100%;
   border: 1px solid #20516b;
   cursor: pointer;
-  height: 17px;
-  width: 17px;
+  height: 100%;
+  width: 100%;
   z-index: 4;
   position: relative;
   transform: scale(0);
@@ -100,7 +105,7 @@ canvas {
   background: #20516b;
   content: '';
   height: 0;
-  left: 50%;
+  left: 9px;
   position: absolute;
   top: 16px;
   transform: translateX(-100%);
@@ -112,31 +117,31 @@ canvas {
   transition: height .6s linear .1s;
   height: 225px;
 }
-.select-period .is-next::after {
-  content: '';
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #20516b;
+.show-selection-list .is-next::after {
   animation: growth 4s linear 2s infinite;
-  opacity: 0;
-}
-.select-period .is-next::before {
-  content: '';
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
   background: #20516b;
-  animation: growth 4s linear 2.3s infinite;
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  left: 0;
   opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+.show-selection-list .is-next::before {
+  animation: growth 4s linear 2.3s infinite;
+  background: #20516b;
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 }
 @keyframes growth {
   85% {
