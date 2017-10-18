@@ -2,43 +2,31 @@ import React, { Component } from 'react'
 import GifIcon from './GifIcon'
 import GifLink from './GifLink'
 
-class ReferenceItem extends Component {
-  state = {
-    isActive : false,
-    toggleButton : false
-  }
+export default (props) => {
+  const gif = props.content
+  const refs = props.state.refs
+  const img = new Image()
+  img.src = `/img/${ gif.source }`
 
-  render () {
-    const gif = this.props.content
-    const img = new Image()
-    img.src = `/img/${ gif.source }`
-
-    const playGIF = (event) => {
-      const file = event.target.src.split('.').filter(index => index === 'gif')
-      if (file.join() === 'gif') {
-        event.target.src = `/img/${ gif.image }`
-        this.setState({ isActive : false })
-      } else {
-        event.target.src = img.src
-        this.setState({ isActive : true })
-        if (!this.state.toggleButton) this.setState({ toggleButton : true })
-      }
-    }
-
-    return (
-      <div className="column">
-        <div className="gif-wrap">
-          <img
-            src={ `/img/${ gif.image }` }
-            alt=""
-            onClick={ (e) => playGIF(e) }
-          />
-          <GifIcon isActive={ this.state.isActive } />
-        </div>
-        <GifLink link={ gif.link } />
-      </div>
+  const clickGif = () => {
+    const result = { }
+    result['refs'] = refs.map(
+      (item, index) => gif.id === (index + 1) ? !refs[gif.id - 1] : false
     )
+    return props.setGif(result)
   }
-}
 
-export default ReferenceItem
+  return (
+    <div className="column">
+      <div className="gif-wrap">
+        <img
+          src={ refs[gif.id - 1]  ? `/img/${ gif.source }`:`/img/${ gif.image }` }
+          alt=""
+          onClick={ clickGif }
+        />
+        <GifIcon isActive={ refs[gif.id - 1] } />
+      </div>
+      <GifLink link={ gif.link } />
+    </div>
+  )
+}
