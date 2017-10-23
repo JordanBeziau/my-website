@@ -15,16 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     .setClassToggle('.period-wrap', 'fade-in')
     .addTo(controller)
 
-  Array.from(document.querySelectorAll('.my-skills img'))
-    .concat(Array.from(document.querySelectorAll('.gif-wrap')))
-    .forEach(element => {
-      new ScrollMagic.Scene({
-        triggerElement: element.parentElement,
-        triggerHook: 0.85
-      })
-        .setClassToggle(element, 'fade-in')
-        .addTo(controller)
+  Array.from(document.querySelectorAll('.my-skills img')).forEach(element => {
+    new ScrollMagic.Scene({
+      triggerElement: element.parentElement,
+      triggerHook: 0.85
     })
+      .setClassToggle(element, 'fade-in')
+      .addTo(controller)
+  })
 
   Array.from(
     document.querySelectorAll('.social-network img')
@@ -37,12 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
       .addTo(controller)
   })
 
-  Array.from(document.querySelectorAll('.gif-link')).forEach(element => {
+  Array.from(
+    document.querySelectorAll('.references-wrap > div')
+  ).forEach(element => {
     new ScrollMagic.Scene({
-      triggerElement: element.parentElement,
-      triggerHook: 0.8
+      triggerElement: element,
+      triggerHook: 0.88
     })
-      .setClassToggle(element, 'draw')
+      .setClassToggle(element, 'fade-in')
       .addTo(controller)
   })
 })
