@@ -313,6 +313,11 @@ li.selected-item i {
 .gif-icon.is-active {
   background-color: rgba(0, 130, 0, 0.6);
 }
+.references-wrap > div:first-of-type .gif-play,
+.references-wrap > div:first-of-type .gif-link {
+  width: 50px;
+  height: 50px;
+}
 .gif-actions {
   position: absolute;
   top: 0;
@@ -324,17 +329,28 @@ li.selected-item i {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.1s linear;
 }
-
+.gif-actions:hover {
+  opacity: 1;
+}
+.gif-play,
 .gif-link {
   display: block;
   width: 35px;
   height: 35px;
+  padding: 3px;
+  margin: 0 5px;
+  background: rgba(10, 10, 10, 0.75);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.gif-link img {
-  text-align: center;
-  max-width: 100%;
-  color: white;
+.gif-link img,
+.gif-play img {
+  max-width: 70%;
 }
 
 /*

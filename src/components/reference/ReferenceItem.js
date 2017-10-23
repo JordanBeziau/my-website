@@ -31,13 +31,16 @@ export default props => {
     <div className="column">
       <img src={props.setGifSource} alt="" onClick={clickGif} />
       <GifIcon isActive={refs[id]} />
-      <div className="gif-actions">
-        <div className="gif-play" />
-        <a className="gif-link" href={gif.link} target="_blank">
-          <img src="/img/link.svg" />
-        </a>
-      </div>
-      {/*<GifLink link={gif.link} />*/}
+      {(position !== 1 || !refs[id]) && (
+        <div className="gif-actions">
+          <div className="gif-play" onClick={clickGif}>
+            <img src="/img/play.svg" />
+          </div>
+          <a className="gif-link" href={gif.link} target="_blank">
+            <img src="/img/link.svg" />
+          </a>
+        </div>
+      )}
     </div>
   )
 }

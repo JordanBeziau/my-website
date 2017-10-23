@@ -4,7 +4,7 @@ export default [
     image: 'inspace.jpg',
     source: 'inspace.gif',
     small: 'inspace_small.jpg',
-    link: 'http://inspace.com',
+    link: 'http://inspace-institute.com',
     duration: 10000
   },
   {
