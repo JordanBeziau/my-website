@@ -12,8 +12,7 @@ h3 {
   font-family: 'Orbitron';
 }
 h3 {
-  margin-top: 0;
-  margin-bottom: 35px;
+  margin: 0;
 }
 h4,
 h5,
@@ -29,7 +28,7 @@ img {
 }
 .container {
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 40px 0 60px;
   width: 75rem;
 }
 .column {
@@ -262,13 +261,13 @@ li.selected-item i {
 /*
   ####### My References #######
 */
-.my-references > div {
+.my-references > main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 400px;
 }
-.my-references .column {
+.references-wrap .column {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -301,14 +300,18 @@ li.selected-item i {
 }
 .gif-icon {
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 2px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
   color: white;
-  font-size: 0.6rem;
-  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 300;
   position: absolute;
-  right: 1.3rem;
-  text-transform: uppercase;
-  top: 0.3rem;
+  right: 1.5rem;
+  top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .gif-icon.is-active {
   background-color: rgba(0, 130, 0, 0.6);
@@ -342,11 +345,16 @@ li.selected-item i {
   height: 35px;
   padding: 3px;
   margin: 0 5px;
-  background: rgba(10, 10, 10, 0.75);
+  background-color: rgba(10, 10, 10, 0.75);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.1s linear;
+}
+.gif-play:hover,
+.gif-link:hover {
+  background-color: rgba(10, 10, 10, 1);
 }
 .gif-link img,
 .gif-play img {
@@ -377,12 +385,72 @@ li.selected-item i {
 .social-network .info-icon {
   bottom: -30px;
 }
+
+/*
+####### Title bullet #######
+*/
+.title-wrap {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.title-bullet {
+  width: 50px;
+  height: 50px;
+}
+.title-bullet svg {
+  width: 100%;
+  height: 100%;
+}
+.title-bullet circle {
+  cx: 25px;
+  cy: 25px;
+  fill: transparent;
+  transform-origin: center;
+}
+.title-bullet circle:first-of-type {
+  r: 23;
+  animation: 24s linear infinite rotation;
+}
+.title-bullet circle:nth-of-type(2) {
+  r: 18;
+  animation: 20s linear reverse infinite rotation;
+}
+.title-bullet circle:nth-of-type(3) {
+  r: 16;
+  animation: 18s linear reverse infinite rotation;
+}
+.title-bullet circle:nth-of-type(4) {
+  r: 12;
+  animation: 12s linear infinite rotation;
+}
+.title-bullet circle:nth-of-type(5) {
+  r: 8;
+  animation: 10s reverse linear infinite rotation;
+}
+.title-bullet circle:nth-of-type(6) {
+  r: 6;
+  animation: 8s linear infinite rotation;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /*
   ####### Responsive ######
 */
 @media screen and (max-width: 75rem) {
   .container {
     width: 100%;
+  }
+}
+@media screen and (max-width: 63.9375rem) {
+  .my-references > main {
+    max-height: 345px;
   }
 }
 @media screen and (max-width: 47.9375rem) {
@@ -397,6 +465,11 @@ li.selected-item i {
   }
   .select-period {
     width: 15%;
+  }
+}
+@media screen and (max-width: 52rem) {
+  .my-references > main {
+    max-height: 278px;
   }
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReferenceItem from './ReferenceItem'
+import TitleBullet from '../title/TitleBullet'
 import references from '../../content/references'
 
 class MyReferences extends Component {
@@ -21,10 +22,26 @@ class MyReferences extends Component {
   }
 
   render() {
+    const circleProps = {
+      stroke: [
+        'rgb(11, 52, 80)',
+        'rgb(11, 52, 80)',
+        'rgba(11, 52, 80, .6)',
+        'rgb(11, 52, 80)',
+        'rgba(11, 52, 80, .6)',
+        'rgb(11, 52, 80)'
+      ],
+      strokeWidth: [1, 1, 3, 2, 1, 1],
+      strokeDasharray: [31, 50, 27, 60, 15, 20]
+    }
+
     return (
-      <div className="container my-references">
-        <h3 className="column">Mes références</h3>
-        <div className="references-wrap">
+      <section className="container my-references">
+        <div className="title-wrap column">
+          <TitleBullet properties={circleProps} />
+          <h3 className="column">Mes références</h3>
+        </div>
+        <main className="references-wrap">
           {this.state.order.map((item, index) => (
             <ReferenceItem
               content={references[item]}
@@ -35,8 +52,8 @@ class MyReferences extends Component {
               position={index + 1}
             />
           ))}
-        </div>
-      </div>
+        </main>
+      </section>
     )
   }
 }

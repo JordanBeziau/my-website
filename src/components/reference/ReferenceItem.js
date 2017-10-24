@@ -1,6 +1,5 @@
 import React from 'react'
 import GifIcon from './GifIcon'
-import GifLink from './GifLink'
 
 export default props => {
   const gif = props.content,
@@ -34,10 +33,10 @@ export default props => {
       {(position !== 1 || !refs[id]) && (
         <div className="gif-actions">
           <div className="gif-play" onClick={clickGif}>
-            <img src="/img/play.svg" />
+            <img src="/img/play.svg" alt="Play" title="Play" />
           </div>
           <a className="gif-link" href={gif.link} target="_blank">
-            <img src="/img/link.svg" />
+            <img src="/img/link.svg" alt="Lien" title="Lien" />
           </a>
         </div>
       )}

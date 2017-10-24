@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.references-wrap > div')
   ).forEach(element => {
     new ScrollMagic.Scene({
-      triggerElement: element,
+      triggerElement: element.parentElement,
       triggerHook: 0.88
     })
       .setClassToggle(element, 'fade-in')
