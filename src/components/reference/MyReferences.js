@@ -37,7 +37,7 @@ class MyReferences extends Component {
 
     return (
       <section className="container my-references">
-        <div className="title-wrap column">
+        <div className="title-wrap">
           <TitleBullet properties={circleProps} />
           <h3 className="column">Mes références</h3>
         </div>

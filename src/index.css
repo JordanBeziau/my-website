@@ -13,6 +13,7 @@ h3 {
 }
 h3 {
   margin: 0;
+  font-size: 1.35rem;
 }
 h4,
 h5,
@@ -210,14 +211,16 @@ li.selected-item i {
   background: rgb(240, 240, 240);
 }
 .my-skills .container {
+  padding-bottom: 20px;
+}
+.skills-wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 0;
 }
-.my-skills .column {
+.skills-wrap .column {
   padding-bottom: 40px;
   position: relative;
   text-align: center;
@@ -446,6 +449,9 @@ li.selected-item i {
 @media screen and (max-width: 75rem) {
   .container {
     width: 100%;
+  }
+  .title-wrap {
+    padding: 0 1rem;
   }
 }
 @media screen and (max-width: 63.9375rem) {
