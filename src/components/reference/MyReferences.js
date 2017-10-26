@@ -6,7 +6,8 @@ import references from '../../content/references'
 class MyReferences extends Component {
   state = {
     refs: [false, false, false],
-    order: [0, 1, 2]
+    order: [0, 1, 2],
+    width: window.innerWidth
   }
 
   setGif = gif => {
@@ -21,7 +22,20 @@ class MyReferences extends Component {
         : `/img/${references[item].small}`
   }
 
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('click', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
+  }
+
   render() {
+    const isMobile = this.state.width < 768
     const circleProps = {
       stroke: [
         'rgb(11, 52, 80)',
@@ -50,6 +64,7 @@ class MyReferences extends Component {
               setGif={this.setGif}
               setGifSource={this.setGifSource(item, index)}
               position={index + 1}
+              isMobile={isMobile}
             />
           ))}
         </main>

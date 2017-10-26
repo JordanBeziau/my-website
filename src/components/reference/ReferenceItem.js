@@ -26,20 +26,28 @@ export default props => {
     return props.setGif(result)
   }
 
-  return (
-    <div className="column">
-      <img src={props.setGifSource} alt="" onClick={clickGif} />
-      <GifIcon isActive={refs[id]} />
-      {(position !== 1 || !refs[id]) && (
-        <div className="gif-actions">
-          <div className="gif-play" onClick={clickGif}>
-            <img src="/img/play.svg" alt="Play" title="Play" />
+  if (!props.isMobile) {
+    return (
+      <div className="column">
+        <img src={props.setGifSource} alt="" onClick={clickGif} />
+        <GifIcon isActive={refs[id]} />
+        {(position !== 1 || !refs[id]) && (
+          <div className="gif-actions">
+            <div className="gif-play" onClick={clickGif}>
+              <img src="/img/play.svg" alt="Play" title="Play" />
+            </div>
+            <a className="gif-link" href={gif.link} target="_blank">
+              <img src="/img/link.svg" alt="Lien" title="Lien" />
+            </a>
           </div>
-          <a className="gif-link" href={gif.link} target="_blank">
-            <img src="/img/link.svg" alt="Lien" title="Lien" />
-          </a>
-        </div>
-      )}
-    </div>
-  )
+        )}
+      </div>
+    )
+  } else {
+    return (
+      <div className="column">
+        <img src={`/img/${gif.image}`} alt="" />
+      </div>
+    )
+  }
 }

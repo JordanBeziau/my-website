@@ -57,7 +57,9 @@ img {
 }
 canvas {
   height: 100%;
+  left: 0;
   position: absolute;
+  top: 0;
   width: 100%;
 }
 /*
@@ -454,11 +456,13 @@ li.selected-item i {
     padding: 0 1rem;
   }
 }
+/* Tablet */
 @media screen and (max-width: 63.9375rem) {
   .my-references > main {
     max-height: 345px;
   }
 }
+/* Mobile */
 @media screen and (max-width: 47.9375rem) {
   .period main {
     flex: 0 0 100%;
@@ -471,6 +475,17 @@ li.selected-item i {
   }
   .select-period {
     width: 15%;
+  }
+  .references-wrap {
+    max-height: none;
+    flex-wrap: nowrap;
+  }
+  .references-wrap > div.column {
+    width: 100%;
+    margin: 0;
+  }
+  .references-wrap > div.column:not(:last-of-type) {
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 52rem) {
