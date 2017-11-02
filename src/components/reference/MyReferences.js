@@ -27,7 +27,7 @@ class MyReferences extends Component {
   }
 
   componentWillUnmount() {
-    window.addEventListener('click', this.handleWindowSizeChange)
+    window.removeEventListener('resize', this.handleWindowSizeChange)
   }
 
   handleWindowSizeChange = () => {

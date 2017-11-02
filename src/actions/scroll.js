@@ -45,4 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
       .setClassToggle(element, 'fade-in')
       .addTo(controller)
   })
+
+  Array.from(document.querySelectorAll('.title-bullet'))
+    .concat(Array.from(document.querySelectorAll('.title-wrap h3')))
+    .forEach(element => {
+      const title = new ScrollMagic.Scene({
+        triggerElement: element.parentElement,
+        triggerHook: 0.9
+      })
+      title.setClassToggle(element, 'fade-title')
+      title.addTo(controller)
+    })
+
+  if (window.innerWidth > 767) {
+    setInterval(() => {
+      const height = document.querySelector('.references-wrap').offsetHeight
+      document.querySelector('.references-wrap').style.minHeight = `${height}px`
+    }, 500)
+  }
 })

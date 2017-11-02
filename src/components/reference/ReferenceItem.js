@@ -6,8 +6,10 @@ export default props => {
     refs = props.state.refs,
     id = gif.id - 1
   const position = props.position
-  const img = new Image()
-  img.src = `/img/${gif.source}`
+  if (!props.isMobile) {
+    const img = new Image()
+    img.src = `/img/${gif.source}`
+  }
 
   const clickGif = () => {
     const result = {}

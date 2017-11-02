@@ -25,14 +25,13 @@ class MyCareer extends Component {
       strokeDasharray: [31, 50, 27, 60, 15, 20]
     }
 
-    console.log(data.careerItems[0].content.constructor === Array)
     return (
       <div className="container career">
         <div className="title-wrap">
           <TitleBullet properties={circleProps} />
           <h3 className="column">Mon parcours</h3>
         </div>
-        <div>
+        <div className="content-wrap">
           <SelectPeriod
             content={data}
             selectedItem={this.getSelectedItem}
