@@ -47,7 +47,11 @@ class DisplayItem extends Component {
         </main>
         {!this.state.width && (
           <div className="column">
-            <img src={imageSource} alt={imageDescription} />
+            <img
+              className="main-img"
+              src={imageSource}
+              alt={imageDescription}
+            />
           </div>
         )}
       </div>

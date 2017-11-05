@@ -7,7 +7,7 @@ export default {
         '',
         'Donec nibh sapien, tincidunt id est viverra, convallis mattis lectus. Proin semper velit et ullamcorper elementum.'
       ],
-      imageSource: '/img/image1.png',
+      imageSource: '/img/image1.jpg',
       imageDescription: ''
     },
     {

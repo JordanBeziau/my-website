@@ -202,9 +202,13 @@ li.selected-item i {
 }
 .period img {
   max-height: 250px;
+  max-width: 100%;
 }
 .hide {
   display: none;
+}
+.period > div.column {
+  position: relative;
 }
 /*
   ######## My Skills ########
