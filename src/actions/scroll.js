@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .setClassToggle('.period-wrap', 'fade-in')
     .addTo(controller)
 
-  Array.from(document.querySelectorAll('.my-skills img')).forEach(element => {
+  document.querySelectorAll('.my-skills img').forEach(element => {
     new ScrollMagic.Scene({
       triggerElement: element.parentElement,
       triggerHook: 0.85
@@ -24,9 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .addTo(controller)
   })
 
-  Array.from(
-    document.querySelectorAll('.social-network img')
-  ).forEach(element => {
+  document.querySelectorAll('.social-network img').forEach(element => {
     new ScrollMagic.Scene({
       triggerElement: element.parentElement,
       triggerHook: 1
@@ -35,9 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .addTo(controller)
   })
 
-  Array.from(
-    document.querySelectorAll('.references-wrap > div')
-  ).forEach(element => {
+  document.querySelectorAll('.references-wrap > div').forEach(element => {
     new ScrollMagic.Scene({
       triggerElement: element.parentElement,
       triggerHook: 0.88
@@ -46,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .addTo(controller)
   })
 
-  Array.from(document.querySelectorAll('.title-bullet'))
-    .concat(Array.from(document.querySelectorAll('.title-wrap h3')))
+  document
+    .querySelectorAll('.title-bullet, .title-wrap h3')
     .forEach(element => {
       const title = new ScrollMagic.Scene({
         triggerElement: element.parentElement,
